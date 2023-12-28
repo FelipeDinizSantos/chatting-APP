@@ -1,0 +1,62 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: .5em;
+}
+
+.connectedUsers
+{
+    margin-bottom: 2em;
+}
+
+.form
+{
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    width: 15em;
+}
+
+.form .to
+{
+    padding-left: .5em;
+    width: 3.5em;
+    height: 2em;
+}
+
+.form textarea
+{
+    height: 2em;
+    padding: .3em 1em;
+}
+
+.form .submit
+{
+    margin-top: .5em;
+}
+
+.messagesContainer
+{
+    list-style-type: none;
+    padding: .5em;
+    border: 1px solid black;
+}
+
+.messagesContainer li
+{
+    padding: 1em;
+}
+
+.messageTitle
+{
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
