@@ -12,18 +12,23 @@ export default function Form(props)
         if(to === props.myId)
         {
             alert('Não é possivel enviar uma mensagem para si mesmo!');
+            return;
         }
-        else
-        {
-            props.send(JSON.stringify(
-            {
-                from: props.myId,
-                to: to,
-                message: message
-            }))
 
-            setMessage('');
+        if(message === '' || to === '')
+        {
+            alert('Preencha todos os campos!');
+            return;
         }
+       
+        props.send(JSON.stringify(
+        {
+            from: props.myId,
+            to: to,
+            message: message
+        }))
+
+        setMessage('');
     }
 
     return(
