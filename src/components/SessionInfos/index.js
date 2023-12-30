@@ -1,3 +1,5 @@
+import handleCookie from "./handleCookie";
+
 export default function SessionInfos(props)
 {
     if(props.lastMessage)
@@ -7,6 +9,7 @@ export default function SessionInfos(props)
         {
             props.setMyId(data.id);
             props.setConnectedUsers(data.connectedUsers);
+            handleCookie('yourID', (data.id).toString());
         }
     }
 

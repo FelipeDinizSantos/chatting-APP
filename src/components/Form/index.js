@@ -35,9 +35,9 @@ export default function Form(props)
         <form className="form" onSubmit={handleSubmit}>
 
             <label>ID do Destinatario: </label> 
-            <input className="to" type="number" min="1" value={to} onChange={(e)=>setTo(e.target.value)} />
+            <input className="to" type="number" min="1" value={to} onChange={(e)=>setTo(e.target.value)} placeholder="ID" />
             <label>Mensagem: </label>
-            <textarea className="message" value={message} onChange={(e)=>setMessage(e.target.value)}></textarea>  
+            <textarea className="message" value={message} onChange={(e)=>setMessage(e.target.value)} placeholder="Mensagem" ></textarea>  
 
             <button className="submit">Enviar</button>
         </form>

@@ -27,19 +27,21 @@ body
 .form .to
 {
     padding-left: .5em;
-    width: 3.5em;
+    width: 4.5em;
     height: 2em;
 }
 
 .form textarea
 {
     height: 2em;
+    width: 25em;
     padding: .3em 1em;
 }
 
 .form .submit
 {
     margin-top: .5em;
+    width: 25em;
 }
 
 .messagesContainer
