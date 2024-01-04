@@ -7,9 +7,10 @@ export default function SessionInfos(props)
         const data = JSON.parse(props.lastMessage.data);
         if(data.action === 'informId')
         {
+            console.log(data.id);
+            handleCookie('yourID', (data.id).toString());
             props.setMyId(data.id);
             props.setConnectedUsers(data.connectedUsers);
-            handleCookie('yourID', (data.id).toString());
         }
     }
 

@@ -1,4 +1,5 @@
-import {useState} from 'react';
+import { useState } from 'react';
+
 import '../assets/styles/index.css';
 import Form from '../components/Form';
 import useWebSocket from "react-use-websocket";
@@ -11,6 +12,7 @@ export default function Index()
     const [myId, setMyId] = useState(0);
     const [connectedUsers, setConnectedUsers] = useState(0);
     const socketUrl = Globals.WS_URL 
+
     const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl);
 
     if(readyState === 1) console.log('Conectado ao servidor!');
