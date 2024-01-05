@@ -9,12 +9,16 @@ import Globals from "../config/Globals";
 
 export default function Index()
 {
-    const [myId, setMyId] = useState(0);
+    const [myId, setMyId] = useState( localStorage.getItem('yourID') ? localStorage.getItem('yourID') : 0 );
     const [connectedUsers, setConnectedUsers] = useState(0);
     const socketUrl = Globals.WS_URL 
-
-    const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl);
-
+    
+    const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl, {
+        queryParams: {
+            userID: myId,
+        }
+    });
+    
     if(readyState === 1) console.log('Conectado ao servidor!');
     if(readyState === 0) console.log('Desconectado!');
 

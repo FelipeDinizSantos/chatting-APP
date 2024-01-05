@@ -1,4 +1,4 @@
-import handleCookie from "./handleCookie";
+import handleIdStorage from "./handleIdStorage";
 
 export default function SessionInfos(props)
 {
@@ -8,7 +8,7 @@ export default function SessionInfos(props)
         if(data.action === 'informId')
         {
             console.log(data.id);
-            handleCookie('yourID', (data.id).toString());
+            handleIdStorage('yourID', (data.id).toString());
             props.setMyId(data.id);
             props.setConnectedUsers(data.connectedUsers);
         }
