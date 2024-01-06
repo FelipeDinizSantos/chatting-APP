@@ -7,8 +7,7 @@ export default function SessionInfos(props)
         const data = JSON.parse(props.lastMessage.data);
         if(data.action === 'informId')
         {
-            console.log(data.id);
-            handleIdStorage('yourID', (data.id).toString());
+            handleIdStorage('yourID', (data.id));
             props.setMyId(data.id);
             props.setConnectedUsers(data.connectedUsers);
         }

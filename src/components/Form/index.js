@@ -28,6 +28,12 @@ export default function Form(props)
             message: message
         }))
 
+        props.setMessageHistory(prevHistory => 
+        [
+            ...prevHistory,
+            { from: to, isMyMessage: true, message: message }
+        ]);
+
         setMessage('');
     }
 

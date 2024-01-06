@@ -1,9 +1,7 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 export default function Messages(props)
 {
-    const [messageHistory, setMessageHistory] = useState([]);
-
     const vibratePhone = (timeMs) => 
     {
         if (navigator.vibrate) 
@@ -20,10 +18,10 @@ export default function Messages(props)
           if (data.action === 'message') 
           {
             vibratePhone(1000);
-            setMessageHistory(prevHistory => 
+            props.setMessageHistory(prevHistory => 
             [
                 ...prevHistory,
-                { from: data.from, message: data.message }
+                { from: data.from, isMyMessage: false, message: data.message }
             ]);
           }
         }
@@ -34,12 +32,17 @@ export default function Messages(props)
             <h3 className="messageTitle">MENSAGENS: </h3>
             <ul className="messagesContainer">
             {
-                messageHistory.length === 0 ? ( <li className="noMessage">Nenhuma mensagem recebida!</li> ) : 
+                props.messageHistory.length === 0 ? ( <li className="noMessage">Nenhuma mensagem recebida ou enviada!</li> ) : 
                 (
-                    messageHistory.map((message, index) => 
+                    props.messageHistory.map((message, index) => 
                     (
+                      message.isMyMessage === true ?    
+                      <li key={index} className="myMessage">
+                        Para Usuário {message.from}: {message.message}
+                      </li>
+                      :
                       <li key={index}>
-                        Usuário {message.from}: {message.message}
+                        De Usuário {message.from}: {message.message}
                       </li>
                     ))
                 )
