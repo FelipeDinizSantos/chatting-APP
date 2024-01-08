@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 
-import '../assets/styles/index.css';
-import Form from '../components/Form';
+import '../assets/css/index.css';
+
+import ToIdForm from '../components/ToIdForm';
+import MessageForm from '../components/MessageForm';
 import useWebSocket from "react-use-websocket";
 import SessionInfos from '../components/SessionInfos';
 import Messages from '../components/Messages';
@@ -10,9 +12,11 @@ import Globals from "../config/Globals";
 export default function Index()
 {
     const [myId, setMyId] = useState( localStorage.getItem('yourID') ? JSON.parse(localStorage.getItem('yourID')) : 0 );
+    const [to, setTo] = useState('');
+    const [message, setMessage] = useState('');
     const [connectedUsers, setConnectedUsers] = useState(0);
     const [messageHistory, setMessageHistory] = useState(
-        JSON.parse(localStorage.getItem('messageHistory')) ? JSON.parse(localStorage.getItem('messageHistory')) : []
+        localStorage.getItem('messageHistory') ? JSON.parse(localStorage.getItem('messageHistory')) : []
     );
 
     const socketUrl = Globals.WS_URL 
@@ -32,17 +36,16 @@ export default function Index()
     if(readyState === 0) console.log('Desconectado!');
 
     return(
-        <>
+        <div className='container'>
             <SessionInfos 
                 myId={myId} setMyId={setMyId} 
                 connectedUsers={connectedUsers} setConnectedUsers={setConnectedUsers}
                 lastMessage={lastMessage}
             />
 
-            <Form 
-                send={sendMessage} 
-                myId={myId} 
-                setMessageHistory={setMessageHistory}
+            <ToIdForm 
+                to={to}
+                setTo={setTo}
             />
 
             <Messages 
@@ -51,6 +54,15 @@ export default function Index()
                 messageHistory={messageHistory}
                 setMessageHistory={setMessageHistory}
             />
-        </>
+
+            <MessageForm
+                send={sendMessage} 
+                myId={myId} 
+                setMessageHistory={setMessageHistory}
+                to={to}
+                message={message}
+                setMessage={setMessage}
+            />
+        </div>
     )
 }

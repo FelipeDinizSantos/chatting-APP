@@ -1,7 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import './css/index.css';
 
 export default function Messages(props)
 {
+    const messagesContainer = useRef();
+
     const vibratePhone = (timeMs) => 
     {
         if (navigator.vibrate) 
@@ -27,22 +30,35 @@ export default function Messages(props)
         }
     }, [props.lastMessage]);
 
+    useEffect(()=>
+    { 
+      if(messagesContainer.current)
+      {
+        messagesContainer.current.scrollTop = messagesContainer.current.scrollHeight;
+      }
+    }, [props.messageHistory])
+
     return(
         <>
-            <h3 className="messageTitle">MENSAGENS: </h3>
-            <ul className="messagesContainer">
+            <ul className="messages" ref={messagesContainer}>
             {
-                props.messageHistory.length === 0 ? ( <li className="noMessage">Nenhuma mensagem recebida ou enviada!</li> ) : 
+                props.messageHistory.length === 0 ? ( <li className="noMessage">Nenhuma mensagem enviada ou recebida!</li> ) : 
                 (
                     props.messageHistory.map((message, index) => 
                     (
                       message.isMyMessage === true ?    
-                      <li key={index} className="myMessage">
-                        Para Usuário {message.from}: {message.message}
+                      <li key={index} className="message my">
+                        <div>
+                          <span>Para {message.from}</span>
+                          <span>{message.message}</span>
+                        </div>
                       </li>
                       :
-                      <li key={index}>
-                        De Usuário {message.from}: {message.message}
+                      <li key={index} className="message">
+                        <div>
+                          <span>De {message.from}</span> 
+                          <span>{message.message}</span>
+                        </div>
                       </li>
                     ))
                 )

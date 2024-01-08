@@ -1,0 +1,13 @@
+.container
+{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    overflow: auto;
+    border: none;
+    outline: none;
+    left: 50%;
+    transform: translate(-50%);
+    width: 80%;
+    height: 100vh;
+}

@@ -1,0 +1,10 @@
+div.sessionInfoContainer
+{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    width: 100%;
+    padding: .5em;
+    background-color: #202c33;
+    border-bottom: 1px solid #0B141A;
+}
