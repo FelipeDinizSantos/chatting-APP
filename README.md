@@ -16,10 +16,20 @@ Os WebSockets são aplicados tanto na aplicação frontend quando no servidor, o
 ## Instalação 
 Antes de clonar este repositório, prepare o servidor, o colocando no ar, siga os passos descritos no README de  [Chatting-SERVER](https://github.com/FelipeDinizSantos/chatting-SERVER) 
 Com servidor pronto, clone este repositório e navegue até a pasta 
-`./src/config/Globals` 
-E altere este atributo:
-`static WS_URL = process.env.WS_URL ? process.env.WS_URL : 'https://chatting-app-hhls.onrender.com';`
+```bash
+./src/config/Globals
+```
+
+E altere este atributo: 
+
+```bash
+static WS_URL = process.env.WS_URL ? process.env.WS_URL : 'https://chatting-app-hhls.onrender.com';
+```
+
 para: 
-`static WS_URL = process.env.WS_URL ? process.env.WS_URL : 'ws://localhost:3010';`
+
+```bash
+static WS_URL = process.env.WS_URL ? process.env.WS_URL : 'ws://localhost:3010';
+```
 
 ## Estado Atual do Projeto 
