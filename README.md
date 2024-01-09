@@ -37,6 +37,11 @@ static WS_URL = process.env.WS_URL ? process.env.WS_URL : 'ws://localhost:3010';
 ### Execução 
 No terminal da aplicação rode o comando:
 ```bash
+npm install
+```
+E inicie a aplicação com: 
+
+```bash
 npm start
 ```
 
