@@ -16,7 +16,7 @@ Os WebSockets são aplicados tanto na aplicação frontend quando no servidor, o
 ## Instalação 
 Antes de clonar este repositório, prepare o servidor, o colocando no ar, siga os passos descritos no README de  [Chatting-SERVER](https://github.com/FelipeDinizSantos/chatting-SERVER) 
 
-Com servidor pronto, clone este repositório e navegue até a pasta 
+Com servidor pronto, clone este repositório e navegue até a pasta:
 ```bash
 ./src/config/Globals
 ```
