@@ -40,14 +40,14 @@ No terminal da aplicação rode o comando:
 npm start
 ```
 
-E acesse o caminho: `http://localhost:3000` em seu navegador.  
+E acesse o caminho: `http://localhost:3000` em seu navegador   
 
 E pronto, utilize a aplicação! =)
 
 ### Nota:
-Para poder se conectar como outro usuário na mesma máquina abra a aplicação em outro navegador! 
+Para poder se conectar como outro usuário na mesma máquina, abra a aplicação em outro navegador! 
 
-Pois as informações de ID e histórico de conversas são armazenados em localstorage.
+Pois as informações de ID e histórico de conversas são armazenadas em localstorage.
 
 ## Estado Atual do Projeto 
-Este projeto ainda esta em desenvolvimento e ainda demanda de muitos passos e correções, bem como da implementação de sessões e do banco de dados (não-relacional). Sinta-se a vontade para faze-las.
+Este projeto ainda esta em desenvolvimento e ainda demanda de muitos passos e correções, bem como da implementação de sessões, criptografias e do banco de dados (não-relacional). Sinta-se a vontade para faze-las.
