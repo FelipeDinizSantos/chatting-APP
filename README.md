@@ -40,7 +40,7 @@ No terminal da aplicação rode o comando:
 npm start
 ```
 
-E acesse o caminho: `http://localhost:3000` 
+E acesse o caminho: `http://localhost:3000` em seu navegador.  
 
 E pronto, utilize a aplicação! =)
 
