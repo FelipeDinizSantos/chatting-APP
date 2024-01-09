@@ -45,9 +45,9 @@ E inicie a aplicação com:
 npm start
 ```
 
-E acesse o caminho: `http://localhost:3000` em seu navegador   
+Enfim, acesse o caminho: `http://localhost:3000` em seu navegador   
 
-E pronto, utilize a aplicação! =)
+E pronto, utilize o aplicativo! =)
 
 ### Nota:
 Para poder se conectar como outro usuário na mesma máquina, abra a aplicação em outro navegador! 
