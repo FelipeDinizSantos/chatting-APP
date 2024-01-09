@@ -50,4 +50,4 @@ Para poder se conectar como outro usuário na mesma máquina, abra a aplicação
 Pois as informações de ID e histórico de conversas são armazenadas em localstorage.
 
 ## Estado Atual do Projeto 
-Este projeto ainda esta em desenvolvimento e ainda demanda de muitos passos e correções, bem como da implementação de sessões, criptografias e do banco de dados (não-relacional). Sinta-se a vontade para faze-las.
+Este projeto ainda esta em desenvolvimento e demanda de muitos passos e correções, bem como da implementação de sessões, criptografias e do banco de dados (não-relacional). Sinta-se a vontade para faze-las.
