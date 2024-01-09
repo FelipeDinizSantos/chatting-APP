@@ -1,7 +1,7 @@
 # CHATTING APP 
 Chatting APP é um projeto pessoal construido para praticar meus conhecimentos em ReactJS e NodeJS, bem como aprofundar meus estudos em conexões **WebSockets**! 
 
-Tem como objetivo possibilitar a troca de mensagens entre dois usuários com base em IDs gerados randomicamente em um ambiente funcional. A interface e funcionalidades se assemelham, em uma comparação rustica, a um Whatsapp ou a qualquer outra aplicação de chat online. 
+Tem como objetivo possibilitar a troca de mensagens entre dois usuários com base em IDs gerados randomicamente em um ambiente funcional. A interface e funcionalidades se assemelham, em uma comparação rustica, ao Whatsapp ou a qualquer outra aplicação de chat online. 
 
 # O Que são WebSockets? 
 
