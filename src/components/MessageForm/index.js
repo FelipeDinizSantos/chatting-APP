@@ -18,7 +18,7 @@ export default function MessageForm(props)
 
         if(props.message === '' || props.to === '')
         {
-            alert('Preencha todos os campos!');
+            alert('Preencha todos os campos necessarios!');
             return;
         }
        
@@ -26,18 +26,30 @@ export default function MessageForm(props)
         {
             from: props.myId,
             to: props.to,
+            time: getCurrentTime(),
             message: props.message
         }))
 
         props.setMessageHistory(prevHistory => 
         [
             ...prevHistory,
-            { from: props.to, isMyMessage: true, message: props.message }
+            { from: props.to, isMyMessage: true, time: getCurrentTime(), message: props.message }
         ]);
 
         textArea.current.rows = 0;
         textArea.current.style.height= 3.2 + 'em';
         props.setMessage('');
+    }
+
+    const getCurrentTime= ()=>
+    {
+        const CURRENTDATE = new Date();
+        const MINUTES = CURRENTDATE.getMinutes();
+        const HOUR = CURRENTDATE.getHours();
+
+        if(MINUTES > 1 && MINUTES < 10) return(HOUR + ':0' + MINUTES);
+        if(MINUTES === 0) return(HOUR + ':00');
+        return(HOUR + ':' + MINUTES);
     }
 
     const handleTextResize = (element) => {

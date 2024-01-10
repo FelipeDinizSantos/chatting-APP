@@ -8,6 +8,7 @@ div.toIdContainer
     padding: 1em;
     width: 100%;
     background-color: #202c33;
+    border-bottom: 1px solid #0B141A;
 }
 
 div.toIdContainer p

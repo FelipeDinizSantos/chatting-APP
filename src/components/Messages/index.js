@@ -20,11 +20,11 @@ export default function Messages(props)
           const data = JSON.parse(props.lastMessage.data);
           if (data.action === 'message') 
           {
-            vibratePhone(1000);
+            vibratePhone(500);
             props.setMessageHistory(prevHistory => 
             [
                 ...prevHistory,
-                { from: data.from, isMyMessage: false, message: data.message }
+                { from: data.from, isMyMessage: false, time: data.time, message: data.message }
             ]);
           }
         }
@@ -50,14 +50,16 @@ export default function Messages(props)
                       <li key={index} className="message my">
                         <div>
                           <span>Para {message.from}</span>
-                          <span>{message.message}</span>
+                          <span className="timeMessage"> {message.time} </span>
+                          <pre>{message.message}</pre>
                         </div>
                       </li>
                       :
                       <li key={index} className="message">
                         <div>
                           <span>De {message.from}</span> 
-                          <span>{message.message}</span>
+                          <span className="timeMessage">{message.time}</span>
+                          <pre>{message.message}</pre>
                         </div>
                       </li>
                     ))

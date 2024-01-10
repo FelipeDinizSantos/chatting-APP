@@ -21,7 +21,7 @@ export default function Index()
 
     const socketUrl = Globals.WS_URL 
     
-    const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl, {
+    const { sendMessage, lastMessage } = useWebSocket(socketUrl, {
         queryParams: {
             userID: myId,
         }
@@ -30,10 +30,7 @@ export default function Index()
     useEffect(()=>
     {
         localStorage.setItem('messageHistory', JSON.stringify(messageHistory));
-    }, [messageHistory])
-
-    if(readyState === 1) console.log('Conectado ao servidor!');
-    if(readyState === 0) console.log('Desconectado!');
+    }, [messageHistory]);
 
     return(
         <div className='container'>

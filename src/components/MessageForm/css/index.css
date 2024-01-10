@@ -29,6 +29,7 @@ form.submitFormMessage textarea
     background-color: #2A3942;
     color: #fff;
     width: 90%;
+    transition: all .5s ease-in-out;
 }
 
 form.submitFormMessage textarea::placeholder
